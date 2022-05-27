@@ -1,0 +1,43 @@
+body{
+    display:content;
+    font-family:'Arial Narrow';
+}
+.container{
+    display:flex;
+    margin-left:12px;
+}
+
+.entrepriseA{
+    background-color:#def;
+    padding:10px;
+    border:solid;
+    display:block;
+    text-align:center;
+    width:25%;
+    margin-right:5px;
+}
+.entrepriseB{
+    background-color:#abc;
+    padding:10px;
+    border:solid;
+    display:inline-block;
+    text-align:center;
+    width:25%;
+    margin-left:5px;
+}
+form{
+    display:flex;
+    text-align:center;
+}
+img{
+    border:dotted;
+    padding:5px;
+}
+button{
+    display:flex;
+    padding:12px;
+}
+p{
+    display:none;
+    background-color:#bbb;
+}
