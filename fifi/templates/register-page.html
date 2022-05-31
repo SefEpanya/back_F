@@ -116,6 +116,10 @@ Register
                   <form class="form" method="POST"> 
                     {% csrf_token %}
                     <!--{{ form.as_p }}-->
+
+                    {% if submitted %}
+                    Well !
+                    {% else %}
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -164,6 +168,7 @@ Register
                         Register
                       </button>
                     </div>
+                    {% endif %}
                   </form>
                   {% endblock %}
                 </div>
