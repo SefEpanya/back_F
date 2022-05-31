@@ -1,4 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import UserForm
+
+#import mysql.connector as sql
+#fn =''
+#em=''
+#pwd=''
 # Views for fifi app
 
 
@@ -12,14 +18,33 @@ def fileFinder(request):
 
 
 def registration(request):
-    return render(request, "register-page.html")
+#    global fn,em,pwd
+#    if request.method =='POST':
+#        m=sql.connect(host="localhost",user="root",password="",database="dbfifi")
+#        cursor=m.cursor()
+#        d=request.POST
+#        for key,value in d.items():
+#            if key=="full_name":
+#                fn=value
+#            if key=="email":
+#                em=value
+#            if key=="password":
+#                pwd=value
+#    c="insert into users('{}','{}','{}')".format(fn,em,pwd)
+#    cursor.execute()
+#    m.commit()
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('userpage')
+    else:
+        form = UserForm()
+    return render(request, "register-page.html", {'form': form })
 
 
 def upload(request):
-    title = request.POST['title']
-    item = request.POST['item']
-    context = {"title": title, "item": item}
-    return render(request, "landing-page.html", context)
+    return render(request, "landing-page.html")
 
 
 def userPage(request):

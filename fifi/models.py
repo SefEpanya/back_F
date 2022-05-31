@@ -13,8 +13,8 @@ class Registration(models.Model):
     """
         Register Model
     """
-    fullname = models.CharField(max_length=100)
-    email = models.EmailField()
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
     password = models.CharField(max_length=12)
 
 
@@ -23,5 +23,5 @@ class User(models.Model):
         User Model
     """
     username = models.CharField(max_length=100)
-    email = models.EmailField()
+    email = models.EmailField(max_length=100)
     password = models.CharField(max_length=12)

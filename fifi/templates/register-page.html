@@ -113,14 +113,16 @@ Register
                 <br>
                 <div class="card-body">
                   {% block content %}
-                  <form class="form" action="{% url 'userpage' %}" method="POST"> {% csrf_token %}
+                  <form class="form" method="POST"> 
+                    {% csrf_token %}
+                    <!--{{ form.as_p }}-->
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-single-02"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" placeholder="Full Name" value="{{ Registration.fullname }}">
+                      <input type="text" class="form-control" placeholder="Full Name" name="name">
                     </div>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -128,7 +130,7 @@ Register
                           <i class="tim-icons icon-email-85"></i>
                         </div>
                       </div>
-                      <input type="email" placeholder="email" class="form-control" value="{{ Registration.email }}">
+                      <input type="email" placeholder="email" class="form-control" name="email">
                     </div>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -136,17 +138,17 @@ Register
                           <i class="tim-icons icon-lock-circle"></i>
                         </div>
                       </div>
-                      <input type="password" class="form-control" placeholder="Password" value="{{ Registration.password }}">
+                      <input type="password" class="form-control" placeholder="Password" name="password">
                     </div>
 
-                    <div class="input-group">
+                    <!--<div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-lock-circle"></i>
                         </div>
                       </div>
                       <input type="password" class="form-control" placeholder="Password" value="{{ Registration.password }}">
-                    </div>
+                    </div>-->
                     <div class="form-check text-left">
                       <label class="form-check-label">
                         <input class="form-check-input" type="checkbox">
